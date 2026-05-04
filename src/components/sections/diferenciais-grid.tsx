@@ -9,6 +9,7 @@ import {
   Shield,
   Car,
   Sofa,
+  Zap,
 } from "lucide-react";
 import { DIFERENCIAIS, type Diferencial } from "@/content/atracoes";
 
@@ -20,6 +21,7 @@ const ICONS = {
   shield: Shield,
   car: Car,
   sofa: Sofa,
+  zap: Zap,
 } as const;
 
 const ACCENT_CYCLE = ["primary", "mustard", "mint", "rose"] as const;

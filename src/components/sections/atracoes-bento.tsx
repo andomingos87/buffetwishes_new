@@ -7,26 +7,50 @@ import { ArrowUpRight } from "lucide-react";
 import { ATRACOES } from "@/content/atracoes";
 import { Star, Cake, Gift, Sparkle } from "@/components/decor/party-shapes";
 
-const FEATURED_INDEXES = [0, 4, 7, 12, 14, 15, 9, 1] as const; // 8 destaques
+type Tile = {
+  index: number;
+  /** Optional shorter label for narrow tiles. */
+  label?: string;
+  /** Tailwind classes for sm+ span. Mobile is always 1×1 in 2-col grid. */
+  span: string;
+  accent: "primary" | "mustard" | "mint" | "rose";
+  /** Title font size for this tile. */
+  size: "hero" | "wide" | "regular";
+};
 
-const TILE_VARIANTS = [
-  // [colSpan, rowSpan, accent]
-  { col: "sm:col-span-3 sm:row-span-2", accent: "primary" },
-  { col: "sm:col-span-2 sm:row-span-1", accent: "mustard" },
-  { col: "sm:col-span-1 sm:row-span-1", accent: "mint" },
-  { col: "sm:col-span-1 sm:row-span-2", accent: "rose" },
-  { col: "sm:col-span-2 sm:row-span-1", accent: "primary" },
-  { col: "sm:col-span-2 sm:row-span-1", accent: "mustard" },
-  { col: "sm:col-span-2 sm:row-span-1", accent: "mint" },
-  { col: "sm:col-span-1 sm:row-span-1", accent: "rose" },
-] as const;
+// 8 tiles → 3 rows × 4 cols = 12 cells
+//   Row 1-2: [hero 2×2] [s] [s]
+//   Row 1-2 cont:        [s] [s]
+//   Row 3   : [wide 2×1]   [s] [s]
+const TILES: Tile[] = [
+  { index: 0, span: "sm:col-span-2 sm:row-span-2", accent: "primary", size: "hero" },
+  { index: 4, span: "sm:col-span-1 sm:row-span-1", accent: "mustard", size: "regular" },
+  { index: 14, span: "sm:col-span-1 sm:row-span-1", accent: "mint", size: "regular" },
+  { index: 7, label: "Simulador de corrida", span: "sm:col-span-1 sm:row-span-1", accent: "rose", size: "regular" },
+  { index: 12, label: "Pista de dança", span: "sm:col-span-1 sm:row-span-1", accent: "primary", size: "regular" },
+  { index: 15, label: "Área Baby com Gira-gira", span: "sm:col-span-2 sm:row-span-1", accent: "mustard", size: "wide" },
+  { index: 9, label: "Jogos eletrônicos", span: "sm:col-span-1 sm:row-span-1", accent: "mint", size: "regular" },
+  { index: 1, label: "Piscina de bolinhas", span: "sm:col-span-1 sm:row-span-1", accent: "rose", size: "regular" },
+];
+
+const ACCENT = {
+  primary: { chip: "bg-cream text-primary", overlay: "from-wine-900/85 via-wine-900/30" },
+  mustard: { chip: "bg-mustard-500 text-wine-900", overlay: "from-wine-900/85 via-wine-900/30" },
+  mint: { chip: "bg-mint-300 text-wine-900", overlay: "from-wine-900/80 via-wine-900/20" },
+  rose: { chip: "bg-rose-300 text-wine-900", overlay: "from-wine-900/85 via-wine-900/35" },
+} as const;
+
+const TITLE_SIZE = {
+  hero: "text-2xl sm:text-3xl",
+  wide: "text-lg sm:text-xl",
+  regular: "text-sm sm:text-base",
+} as const;
 
 export function AtracoesBento() {
   const reduce = useReducedMotion();
 
   return (
     <section className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      {/* Section heading */}
       <div className="mb-12 flex flex-col items-center text-center">
         <motion.span
           initial={{ opacity: 0, y: 8 }}
@@ -55,10 +79,11 @@ export function AtracoesBento() {
         </p>
       </div>
 
-      <ul className="grid auto-rows-[150px] grid-cols-2 gap-3 sm:grid-cols-6 sm:gap-4">
-        {FEATURED_INDEXES.map((idx, i) => {
-          const a = ATRACOES[idx];
-          const v = TILE_VARIANTS[i] ?? TILE_VARIANTS[0];
+      <ul className="grid auto-rows-[200px] grid-cols-2 gap-3 sm:auto-rows-[220px] sm:grid-cols-4 sm:gap-4">
+        {TILES.map((t, i) => {
+          const a = ATRACOES[t.index];
+          const accent = ACCENT[t.accent];
+          const label = t.label ?? a.titulo;
           return (
             <motion.li
               key={a.titulo}
@@ -67,44 +92,30 @@ export function AtracoesBento() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, delay: i * 0.05 }}
               whileHover={!reduce ? { y: -4 } : undefined}
-              className={`group relative overflow-hidden rounded-[22px] ring-1 ring-border ${v.col}`}
+              className={`group relative overflow-hidden rounded-[22px] ring-1 ring-border ${t.span}`}
             >
               <Image
                 src={a.full}
                 alt={a.titulo}
                 fill
-                sizes="(max-width: 640px) 50vw, 33vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div
                 aria-hidden
-                className={`absolute inset-0 bg-gradient-to-t ${
-                  v.accent === "mustard"
-                    ? "from-wine-900/85 via-wine-900/30"
-                    : v.accent === "mint"
-                      ? "from-wine-900/80 via-wine-900/20"
-                      : v.accent === "rose"
-                        ? "from-wine-900/85 via-wine-900/35"
-                        : "from-wine-900/85 via-wine-900/30"
-                } to-transparent`}
+                className={`absolute inset-0 bg-gradient-to-t ${accent.overlay} to-transparent`}
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-5">
                 <span
-                  className={`mb-2 inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-sm ${
-                    v.accent === "mustard"
-                      ? "bg-mustard-500 text-wine-900"
-                      : v.accent === "mint"
-                        ? "bg-mint-300 text-wine-900"
-                        : v.accent === "rose"
-                          ? "bg-rose-300 text-wine-900"
-                          : "bg-cream text-primary"
-                  }`}
+                  className={`mb-2 inline-flex w-fit items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider shadow-sm ${accent.chip}`}
                 >
                   <Sparkle className="h-2.5 w-2.5" />
                   Atração
                 </span>
-                <h3 className="text-balance font-display text-base font-bold leading-tight text-white drop-shadow sm:text-lg">
-                  {a.titulo}
+                <h3
+                  className={`text-balance font-display font-bold leading-tight text-white drop-shadow ${TITLE_SIZE[t.size]}`}
+                >
+                  {label}
                 </h3>
               </div>
             </motion.li>

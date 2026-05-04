@@ -41,15 +41,28 @@ export const ATRACOES: Atracao[] = TITULOS.map((titulo, i) => {
 export type Diferencial = {
   titulo: string;
   descricao: string;
-  icon: "baby" | "snowflake" | "wifi" | "accessibility" | "shield" | "car" | "sofa";
+  icon:
+    | "baby"
+    | "snowflake"
+    | "wifi"
+    | "accessibility"
+    | "shield"
+    | "car"
+    | "sofa"
+    | "zap";
 };
 
+/**
+ * Diferenciais visíveis na home — cobertura completa da copy original
+ * (lounge, fraldário, segurança, gerador, climatização, acessibilidade, valet, wifi).
+ */
 export const DIFERENCIAIS: Diferencial[] = [
   { titulo: "Fraldário", descricao: "Espaço dedicado e equipado para os bebês.", icon: "baby" },
   { titulo: "Ar-condicionado", descricao: "Climatização em todo o espaço.", icon: "snowflake" },
   { titulo: "WiFi", descricao: "Internet liberada para todos os convidados.", icon: "wifi" },
   { titulo: "Acessibilidade", descricao: "Pisos sem desníveis, elevador e WCs adaptados.", icon: "accessibility" },
   { titulo: "Segurança", descricao: "Sistema de segurança completo e monitorado.", icon: "shield" },
+  { titulo: "Gerador", descricao: "Energia de backup — festa não para por queda de luz.", icon: "zap" },
   { titulo: "Valet", descricao: "Serviço de manobrista para sua tranquilidade.", icon: "car" },
   { titulo: "Lounge", descricao: "Ambiente premium para receber bem.", icon: "sofa" },
 ];

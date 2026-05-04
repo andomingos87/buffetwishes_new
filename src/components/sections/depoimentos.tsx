@@ -81,16 +81,22 @@ export function Depoimentos() {
                   className="min-w-0 shrink-0 grow-0 basis-full px-2 sm:basis-[80%] sm:px-4 lg:basis-[60%]"
                 >
                   <div className="relative flex h-full flex-col gap-5 rounded-3xl bg-card p-8 shadow-lg ring-1 ring-border sm:p-10">
-                    <span aria-hidden className="absolute -top-4 left-8 flex h-8 w-8 items-center justify-center rounded-full bg-mustard-500 text-wine-900 shadow-md">
-                      <Quote className="h-4 w-4" />
-                    </span>
-                    <div className="flex gap-1">
-                      {Array.from({ length: d.rating }).map((_, k) => (
-                        <Star
-                          key={k}
-                          className="h-4 w-4 fill-mustard-500 text-mustard-500"
-                        />
-                      ))}
+                    <Quote
+                      aria-hidden
+                      className="pointer-events-none absolute right-6 top-6 h-12 w-12 text-mustard-500/20 sm:h-16 sm:w-16"
+                    />
+                    <div className="relative flex items-center gap-3">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-mustard-500 text-wine-900 shadow-sm">
+                        <Quote className="h-4 w-4" />
+                      </span>
+                      <div className="flex gap-1">
+                        {Array.from({ length: d.rating }).map((_, k) => (
+                          <Star
+                            key={k}
+                            className="h-4 w-4 fill-mustard-500 text-mustard-500"
+                          />
+                        ))}
+                      </div>
                     </div>
                     <p className="text-pretty font-display text-xl italic leading-relaxed text-foreground/90 sm:text-2xl">
                       &ldquo;{d.texto}&rdquo;
