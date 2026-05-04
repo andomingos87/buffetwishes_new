@@ -24,7 +24,7 @@ export function WhatsAppFAB() {
           );
         }
       }}
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_28px_rgba(37,211,102,0.45)] ring-4 ring-[#25D366]/20 sm:h-16 sm:w-16"
+      className="fixed bottom-6 right-6 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_8px_28px_rgba(37,211,102,0.45)] ring-4 ring-[#25D366]/20 lg:flex lg:h-16 lg:w-16"
     >
       <span
         aria-hidden

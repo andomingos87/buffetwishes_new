@@ -5,8 +5,12 @@ import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFAB } from "@/components/layout/whatsapp-fab";
+import { MobileCTABar } from "@/components/layout/mobile-cta-bar";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import { ConsentAnalytics } from "@/components/layout/analytics";
+import { ScrollProgress } from "@/components/decor/scroll-progress";
+import { SparkleTrail } from "@/components/decor/sparkle-trail";
+import { HiddenBalloon } from "@/components/decor/hidden-balloon";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
@@ -81,12 +85,16 @@ export default function RootLayout({
         >
           Pular para o conteúdo
         </a>
+        <ScrollProgress />
+        <SparkleTrail />
+        <HiddenBalloon />
         <Header />
         <main id="conteudo" className="flex flex-1 flex-col">
           {children}
         </main>
         <Footer />
         <WhatsAppFAB />
+        <MobileCTABar />
         <CookieBanner />
         <ConsentAnalytics />
         <Toaster richColors closeButton position="top-center" />
