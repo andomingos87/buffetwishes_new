@@ -26,12 +26,16 @@ export function Depoimentos() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    setCount(emblaApi.scrollSnapList().length);
-    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
-    onSelect();
-    emblaApi.on("select", onSelect);
+    const sync = () => {
+      setSelected(emblaApi.selectedScrollSnap());
+      setCount(emblaApi.scrollSnapList().length);
+    };
+    emblaApi.on("select", sync);
+    emblaApi.on("reInit", sync);
+    queueMicrotask(sync);
     return () => {
-      emblaApi.off("select", onSelect);
+      emblaApi.off("select", sync);
+      emblaApi.off("reInit", sync);
     };
   }, [emblaApi]);
 

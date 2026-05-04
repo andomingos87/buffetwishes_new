@@ -23,19 +23,16 @@ let nextId = 0;
 export function SparkleTrail() {
   const [sparks, setSparks] = useState<Spark[]>([]);
   const lastEmit = useRef(0);
-  const enabledRef = useRef(false);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    enabledRef.current = fine && !reduce;
-    if (!enabledRef.current) return;
+    if (!fine || reduce) return;
 
     const onMove = (e: PointerEvent) => {
       const now = performance.now();
       if (now - lastEmit.current < 80) return; // throttle
       lastEmit.current = now;
-      // Random gate: only ~35% of moves emit
       if (Math.random() > 0.35) return;
       setSparks((prev) =>
         [
@@ -66,8 +63,6 @@ export function SparkleTrail() {
     }, 32);
     return () => clearInterval(id);
   }, [sparks.length]);
-
-  if (typeof window !== "undefined" && !enabledRef.current) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[58]" aria-hidden>

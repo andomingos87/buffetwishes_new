@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { Phone, Calendar } from "lucide-react";
 import { whatsappLink, SITE } from "@/lib/site";
 import { useConfetti } from "@/components/decor/confetti-burst";
