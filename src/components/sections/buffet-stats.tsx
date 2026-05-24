@@ -6,7 +6,7 @@ import { Sparkle } from "@/components/decor/party-shapes";
 const STATS = [
   { value: "10+", label: "anos no Tatuapé", sub: "desde 2014" },
   { value: "5.000+", label: "festas realizadas", sub: "memórias eternas" },
-  { value: "26", label: "atrações exclusivas", sub: "em um só lugar" },
+  { value: "30+", label: "atrações exclusivas", sub: "em um só lugar" },
   { value: "1.000m²", label: "de espaço", sub: "climatizado" },
 ] as const;
 

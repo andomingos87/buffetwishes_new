@@ -24,7 +24,7 @@ const VALORES: Valor[] = [
     numero: "02",
     titulo: "Estrutura que impressiona",
     descricao:
-      "Lounge premium, camarim com suíte, fraldário, área baby e mais de 26 atrações em 1000m² climatizados.",
+      "Lounge premium, camarim com suíte, fraldário, área baby e mais de 30 atrações em 1000m² climatizados.",
     icon: Sparkles,
     accent: "mustard",
   },

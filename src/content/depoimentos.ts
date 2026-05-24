@@ -32,7 +32,7 @@ export const DEPOIMENTOS: Depoimento[] = [
     nome: "Família Pereira",
     papel: "Festa do Davi, 4 anos",
     texto:
-      "26 atrações não é exagero. O simulador de corrida e a torre foram sucesso entre os mais velhos, e a área baby surpreendeu. Atendimento de outro nível.",
+      "Mais de 30 atrações não é exagero. O simulador de corrida e a torre foram sucesso entre os mais velhos, e a área baby surpreendeu. Atendimento de outro nível.",
     foto: "/img/giovanna-grigio.jpg",
     rating: 5,
   },

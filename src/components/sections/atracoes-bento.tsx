@@ -60,7 +60,7 @@ export function AtracoesBento() {
           className="inline-flex items-center gap-2 rounded-full border border-mustard-300 bg-mustard-50 px-3 py-1 text-xs font-medium uppercase tracking-wider text-wine-900"
         >
           <Star className="h-3 w-3" />
-          26 atrações
+          + de 30 atrações
         </motion.span>
         <h2 className="mt-4 text-balance font-display text-4xl font-extrabold leading-tight text-primary sm:text-5xl">
           Diversão que cabe nos sonhos
@@ -128,7 +128,7 @@ export function AtracoesBento() {
           href="/estrutura"
           className="group inline-flex items-center gap-2 rounded-full border border-primary/30 bg-background px-7 py-3.5 text-sm font-medium text-primary transition-all hover:border-primary hover:bg-secondary"
         >
-          Ver as 26 atrações
+          Ver todas as atrações
           <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
         <span className="flex items-center gap-1.5 text-xs text-foreground/50">

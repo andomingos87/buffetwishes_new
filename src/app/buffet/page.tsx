@@ -23,7 +23,7 @@ const TICKER_ITEMS = [
   "Desde 2014",
   "Tatuapé · São Paulo",
   "5000+ festas realizadas",
-  "26 atrações exclusivas",
+  "+ de 30 atrações exclusivas",
   "1000m² climatizados",
   "Buffet Wishes",
   "★ ★ ★ ★ ★",
@@ -49,7 +49,7 @@ export default function BuffetPage() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-primary/70">
               <span className="inline-block h-px w-10 bg-primary/40" />
-              <span>Edição Nº 26</span>
+              <span>Edição Nº 30</span>
               <span aria-hidden className="text-mustard-500">
                 ★
               </span>
@@ -85,7 +85,7 @@ export default function BuffetPage() {
             <dl className="mx-auto mt-10 grid max-w-3xl grid-cols-3 items-center gap-6 border-t border-primary/15 pt-6 text-left">
               {[
                 { n: "01", label: "1000m² de espaço" },
-                { n: "02", label: "26 atrações exclusivas" },
+                { n: "02", label: "+ de 30 atrações exclusivas" },
                 { n: "03", label: "10+ anos no Tatuapé" },
               ].map((s) => (
                 <div key={s.n} className="flex flex-col">
@@ -127,7 +127,7 @@ export default function BuffetPage() {
             <p>
               Com uma estrutura ímpar, espaço climatizado, lounge premium,
               camarim com suíte, fraldário, sistema completo de segurança e
-              mais de <strong className="text-primary">26 atrações</strong>,
+              mais de <strong className="text-primary">30 atrações</strong>,
               oferecemos tudo o que sua festa precisa em um lugar só.
             </p>
             <p className="border-l-4 border-mustard-500 pl-5 font-display text-xl italic leading-snug text-primary sm:text-2xl">

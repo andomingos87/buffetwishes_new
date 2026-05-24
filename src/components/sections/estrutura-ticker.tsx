@@ -2,7 +2,7 @@ import { Marquee } from "@/components/decor/marquee";
 
 const TICKER_ITEMS = [
   "1000m²",
-  "26 ATRAÇÕES",
+  "+ DE 30 ATRAÇÕES",
   "CLIMATIZADO",
   "LOUNGE PREMIUM",
   "★ ★ ★ ★ ★",

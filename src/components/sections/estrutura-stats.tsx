@@ -4,8 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Sparkle } from "@/components/decor/party-shapes";
 
 const STATS = [
-  { value: "1.000m²", label: "de espaço", sub: "em um único piso" },
-  { value: "26", label: "atrações exclusivas", sub: "para todas as idades" },
+  { value: "1.000m²", label: "de estrutura", sub: "em 2 pisos com elevador" },
+  { value: "30+", label: "atrações exclusivas", sub: "para todas as idades" },
   { value: "4", label: "ambientes integrados", sub: "lounge, pista, baby, salão" },
   { value: "250", label: "convidados (máx.)", sub: "com conforto" },
 ] as const;

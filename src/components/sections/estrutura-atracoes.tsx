@@ -96,7 +96,7 @@ export function EstruturaAtracoes() {
           transition={{ duration: 0.6, delay: 0.05 }}
           className="mt-4 text-balance font-display text-4xl font-extrabold leading-tight text-primary sm:text-5xl lg:text-6xl"
         >
-          26 motivos para{" "}
+          + de 30 motivos para{" "}
           <span className="relative inline-block italic">
             <span className="relative z-10">não querer ir embora</span>
             <span

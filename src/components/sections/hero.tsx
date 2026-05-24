@@ -21,7 +21,7 @@ const HEADLINE_SUFFIX = "podem te levar?";
 
 const SPECS = [
   { n: "01", label: "1000m² de espaço" },
-  { n: "02", label: "26 atrações exclusivas" },
+  { n: "02", label: "+ de 30 atrações exclusivas" },
   { n: "03", label: "10+ anos no Tatuapé" },
 ] as const;
 
@@ -177,7 +177,7 @@ export function Hero() {
             className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-primary/70"
           >
             <span className="inline-block h-px w-10 bg-primary/40" />
-            <span>Edição Nº 26</span>
+            <span>Edição Nº 30</span>
             <span aria-hidden className="text-mustard-500">
               ★
             </span>
@@ -245,7 +245,7 @@ export function Hero() {
             transition={{ delay: 1.1, duration: 0.6 }}
             className="mt-7 max-w-xl text-pretty font-display text-lg italic leading-relaxed text-foreground/75 sm:text-xl"
           >
-            Estrutura única, profissionais qualificados e mais de 26 atrações
+            Estrutura única, profissionais qualificados e mais de 30 atrações
             para tornar a festa dos seus sonhos inesquecível.
           </motion.p>
 

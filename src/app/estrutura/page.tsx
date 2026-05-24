@@ -10,7 +10,7 @@ import { EstruturaCTA } from "@/components/sections/estrutura-cta";
 export const metadata: Metadata = {
   title: "Estrutura incomparável",
   description:
-    "1000 m² com 26 atrações, lounge, camarim com suíte, fraldário, sistema de segurança, gerador, elevador, WCs adaptados e pisos sem desníveis.",
+    "1000 m² com mais de 30 atrações, lounge, camarim com suíte, fraldário, sistema de segurança, gerador, elevador e WCs adaptados.",
   alternates: { canonical: "/estrutura" },
 };
 

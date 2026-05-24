@@ -57,7 +57,7 @@ export default async function OpengraphImage() {
             opacity: 0.85,
           }}
         >
-          Buffet infantil em Tatuapé / SP — 1000 m² e mais de 26 atrações
+          Buffet infantil em Tatuapé / SP — 1000 m² e mais de 30 atrações
         </div>
       </div>
     ),

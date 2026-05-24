@@ -20,8 +20,8 @@ const CHIP_CLASSES = {
 } as const;
 
 const SPECS = [
-  { n: "01", label: "1000m² em um único piso" },
-  { n: "02", label: "26 atrações exclusivas" },
+  { n: "01", label: "1000m² de estrutura" },
+  { n: "02", label: "+ de 30 atrações exclusivas" },
   { n: "03", label: "4 ambientes para celebrar" },
 ] as const;
 
@@ -75,7 +75,7 @@ export function EstruturaHero() {
           className="flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-primary/70"
         >
           <span className="inline-block h-px w-10 bg-primary/40" />
-          <span>Edição Nº 26 · Estrutura</span>
+          <span>Edição Nº 30 · Estrutura</span>
           <span aria-hidden className="text-mustard-500">
             ★
           </span>
@@ -112,8 +112,7 @@ export function EstruturaHero() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="mx-auto mt-7 max-w-2xl text-pretty font-display text-lg italic leading-relaxed text-foreground/75 sm:text-2xl"
         >
-          Um único piso, sem desníveis, com 26 atrações pensadas para cada
-          idade — dos bebês aos avós.
+          Mais de 30 atrações pensadas para cada idade — dos bebês aos avós.
         </motion.p>
 
         {/* Tipos de festa — elevated chips */}

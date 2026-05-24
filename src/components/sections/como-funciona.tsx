@@ -24,7 +24,7 @@ const STEPS = [
     n: "03",
     icon: PartyPopper,
     title: "É festa!",
-    text: "No dia, nossa equipe cuida de tudo. Você curte com a família e vê os pequenos correrem por 26 atrações.",
+    text: "No dia, nossa equipe cuida de tudo. Você curte com a família e vê os pequenos correrem por mais de 30 atrações.",
     accent: "rose",
   },
 ] as const;

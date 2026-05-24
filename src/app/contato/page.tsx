@@ -72,7 +72,7 @@ export default function ContatoPage() {
           <Reveal>
             <div className="flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-primary/70">
               <span className="inline-block h-px w-10 bg-primary/40" />
-              <span>Edição Nº 26 · Contato</span>
+              <span>Edição Nº 30 · Contato</span>
               <span aria-hidden className="text-mustard-500">
                 ★
               </span>
